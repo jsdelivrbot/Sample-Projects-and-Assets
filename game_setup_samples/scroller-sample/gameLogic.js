@@ -1,29 +1,25 @@
 var myGame = {
   config : {
-    //  containerId:'game',//Probably not needed
-    //  playerName : 'SpinyShell',//remove when possible
-    //  mainCamera: 'Camera.Main',
       lives: 3,
       speed : 0.2,
       actionButton: 'leftmouse',
-  //    collisionNames : ['Icosphere','Cube'],//remove when possible
       endTrigger : 'Trigger.End',
       screenImages : [
         {
-          src:'/nickuGame/Start_Screen.png',
+          src:'/images/start.png',
           id : 'mainScreen'
         },
         {
-          src : '/nickuGame/Lose_Screen.png',
+          src : '/images/lose.png',
           id : 'loseScreen'
         },
         {
-          src : '/nickuGame/Win_Screen.png',
+          src : '/images/win.png',
           id : 'winScreen'
         }
       ],
       livesImage : {
-        src : '/scroller/heart.png',
+        src : '/images/heart.png',
         dX:0,
         dY:10,
         dWidth:30,
@@ -38,7 +34,7 @@ var myGame = {
         rotation : {
           x: 0,
           y: 0,
-          z: 0.000
+          z: 0
         }
       }
   },
@@ -50,8 +46,7 @@ var myGame = {
 
 function start(){
     myGame.game = new A3D.Game.Scroller(myGame.config);
-    myGame.game.loadScene('/matthewp/','Scroller.babylon',myGame.scripts);
+    myGame.game.loadScene('/scenes/','myGame.babylon',myGame.scripts);
 }
 
 document.addEventListener( "DOMContentLoaded", start, false );
-
