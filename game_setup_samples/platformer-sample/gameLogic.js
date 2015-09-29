@@ -6,13 +6,15 @@ var myGame = {
       leftButton : 65,
       rightButton : 68,
       gravity : -0.5,
-      jumpForce : 4,
+
       actionButton: 'leftmouse',
       playerSettings : {
         meshName: 'CircleMan',
         rootUrl: '/models/',
         file:'Circle_man.babylon',
         spawnPoint : 'InitialSpawn',
+        jumpForce : 4,
+        jumpAccel : 2,
         animationsSetup : [
           {
             name : 'walk',
@@ -72,6 +74,7 @@ var myGame = {
           id : 'winScreen'
         }
       ],
+      textObjects :[],
       livesImage : {
         src : '/images/heart.png',
         dX:0,
@@ -95,14 +98,16 @@ var myGame = {
 
   scripts : function(){
     //TODO this is where you can add your own game logic
-
+    A3D.ActiveGame.run();
   }
 };
 
 function start(){
-    myGame.game = new A3D.Game.Platformer(myGame.config);
-    myGame.game.loadScene('/scenes/','platformer.babylon',myGame.scripts);
+  new A3D.Game(myGame.config);
+    A3D.ActiveGame._loadScene('./scenes/','platformer.babylon',function(){
+      myGame.Platformer = new A3D.Module.Platformer(myGame.config);
+      myGame.Platformer.loadModule(myGame.scripts);
+    });
 }
 
 document.addEventListener( "DOMContentLoaded", start, false );
-

@@ -45,8 +45,14 @@ var myGame = {
 };
 
 function start(){
-    myGame.game = new A3D.Game.Scroller(myGame.config);
-    myGame.game.loadScene('/scenes/','myGame.babylon',myGame.scripts);
+  //Creates the Game Engine
+  new A3D.Game(myGame.config);
+
+  //Loads the first scene. Then Launches the Module
+  A3D.ActiveGame._loadScene('./scenes/','myGame.babylon',function(){
+    myGame.Scroller = new A3D.Module.Scroller(myGame.config);
+    myGame.Scroller.loadModule(myGame.scripts);
+  });
 }
 
 document.addEventListener( "DOMContentLoaded", start, false );
