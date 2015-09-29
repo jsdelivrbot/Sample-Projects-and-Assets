@@ -1,7 +1,7 @@
 var myGame = {
   config : {
     playerSetup : {
-      urlRoot : './scenes/',
+      urlRoot : './models/',
       file : 'chris.babylon',
       importMeshName:'Chris',
       boundsSize : {
@@ -73,7 +73,6 @@ function start(){
     new A3D.Game(myGame.config);
     A3D.ActiveGame._loadScene('./scenes/','first_city.babylon',function(){
       myGame.Adventure = new A3D.Module.Adventure(myGame.config);
-      console.log(A3D.ActiveGame);
       myGame.Adventure.loadModule(myGame.scripts);
     });
 }
