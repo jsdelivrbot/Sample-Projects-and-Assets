@@ -1,5 +1,16 @@
-var myGame = {
-  config : {
+A3D.config = {
+  game:{
+    forceResolution: true,
+    targetRes : [640,480],
+    startScene : 'first_level'
+  },
+  scenes : {
+    first_level : {
+      rootUrl : './scenes/',
+      file : 'platformer.babylon'
+    }
+  },
+
       lives: 3,
       speed : 1,
       jumpButton : 32,
@@ -22,6 +33,15 @@ var myGame = {
             end : 59,
             options : {
               ratio: 2.4
+            }
+          },
+          {
+            name : 'idle',
+            start:80,
+            end : 83,
+            options : {
+              loop : true,
+              ratio : .2
             }
           },
           {
@@ -94,20 +114,12 @@ var myGame = {
           z: 0
         }
       }
-  },
 
-  scripts : function(){
-    //TODO this is where you can add your own game logic
-    A3D.ActiveGame.run();
-  }
 };
 
 function start(){
-  new A3D.Game(myGame.config);
-    A3D.ActiveGame._loadScene('./scenes/','platformer.babylon',function(){
-      myGame.Platformer = new A3D.Module.Platformer(myGame.config);
-      myGame.Platformer.loadModule(myGame.scripts);
-    });
+  new A3D.Game();
+  A3D.ActiveGame.run();
 }
 
 document.addEventListener( "DOMContentLoaded", start, false );
