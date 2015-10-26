@@ -80,21 +80,6 @@ A3D.config = {
         }
 
       },
-      screenImages : [
-        {
-          src:'/images/start.png',
-          id : 'mainScreen'
-        },
-        {
-          src : '/images/lose.png',
-          id : 'loseScreen'
-        },
-        {
-          src : '/images/win.png',
-          id : 'winScreen'
-        }
-      ],
-      textObjects :[],
       livesImage : {
         src : '/images/heart.png',
         dX:0,
@@ -119,7 +104,6 @@ A3D.config = {
 
 function start(){
   new A3D.Game();
-  A3D.ActiveGame.run();
 }
 
 document.addEventListener( "DOMContentLoaded", start, false );
