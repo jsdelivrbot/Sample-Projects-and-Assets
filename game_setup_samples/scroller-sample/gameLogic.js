@@ -1,5 +1,16 @@
-var myGame = {
-  config : {
+A3D.config = {
+  game : {
+    forceResolution: true,
+    targetRes : [640,480],
+    startScene : 'sampleLevel'
+  },
+    scenes: {
+      sampleLevel : {
+        rootUrl : './scenes/',
+        file : 'myGame.babylon',
+
+      }
+    },
       lives: 3,
       speed : 0.2,
       actionButton: 'leftmouse',
@@ -37,22 +48,10 @@ var myGame = {
           z: 0
         }
       }
-  },
-
-  scripts : function(){
-    //TODO this is where you can add your own game logic
-  }
-};
+  };
 
 function start(){
-  //Creates the Game Engine
-  new A3D.Game(myGame.config);
-
-  //Loads the first scene. Then Launches the Module
-  A3D.ActiveGame._loadScene('./scenes/','myGame.babylon',function(){
-    myGame.Scroller = new A3D.Module.Scroller(myGame.config);
-    myGame.Scroller.loadModule(myGame.scripts);
-  });
+  new A3D.Game();
 }
 
 document.addEventListener( "DOMContentLoaded", start, false );

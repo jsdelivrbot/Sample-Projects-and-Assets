@@ -116,13 +116,6 @@ A3D.config = {
 
 function start(){
   new A3D.Game();
-  A3D.ActiveGame.run();
-    /*
-    A3D.ActiveGame._loadScene('./scenes/','sampleLevel.babylon',function(){
-      myGame.Adventure = new A3D.Module.Adventure(myGame.config);
-      myGame.Adventure.loadModule(myGame.scripts);
-    });
-    */
 }
 
 document.addEventListener( "DOMContentLoaded", start, false );
