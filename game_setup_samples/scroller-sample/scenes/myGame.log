@@ -2,13 +2,9 @@
 ========= Conversion from Blender to Babylon.js =========
 	Python World class constructor completed
 	WARNING: No active camera has been assigned, or is not in a currently selected Blender layer
+	processing begun of material:  myGame.Material
 	processing begun of material:  myGame.Material.001
 	processing begun of material:  myGame.Material.002
-	processing begun of material:  myGame.Material.003
-	WARNING texture type not currently supported:  NONE, ignored.
-	processing begun of material:  myGame.Material.004
-	processing begun of material:  myGame.Material.005
-	processing begun of material:  myGame.Material.006
 	processing begun of material:  myGame.Material.007
 	Diffuse texture found
 Error encountered processing image file:  /home/cefleet/Projects/Sample-Projects-and-Assets/game_setup_samples/scroller-sample/scenes/background.png, Error:  '/home/cefleet/Projects/Sample-Projects-and-Assets/game_setup_samples/scroller-sample/scenes/background.png' and '/home/cefleet/Projects/Sample-Projects-and-Assets/game_setup_samples/scroller-sample/scenes/background.png' are the same file
@@ -16,6 +12,13 @@ Error encountered processing image file:  /home/cefleet/Projects/Sample-Projects
 	WARNING texture type not currently supported:  DISTORTED_NOISE, ignored.
 	processing begun of material:  myGame.Material.009
 	WARNING texture type not currently supported:  DISTORTED_NOISE, ignored.
+	processing begun of mesh:  Initial.Spawn
+		num positions      :  8
+		num normals        :  8
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
 	processing begun of mesh:  Coral.009
 		processing begun of multimaterial:  myGame.Multimaterial#0
 		num positions      :  516
@@ -124,16 +127,8 @@ Error encountered processing image file:  /home/cefleet/Projects/Sample-Projects
 		num uvs2           :  0
 		num colors         :  0
 		num indices        :  6
-	processing begun of mesh:  Snail
-		processing begun of multimaterial:  myGame.Multimaterial#9
-		num positions      :  248
-		num normals        :  248
-		num uvs            :  0
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  1188
 	processing begun of mesh:  Coral
-		processing begun of multimaterial:  myGame.Multimaterial#10
+		processing begun of multimaterial:  myGame.Multimaterial#9
 		num positions      :  515
 		num normals        :  515
 		num uvs            :  1030

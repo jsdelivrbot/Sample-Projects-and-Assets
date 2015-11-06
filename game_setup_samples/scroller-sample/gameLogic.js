@@ -7,8 +7,7 @@ A3D.config = {
     scenes: {
       sampleLevel : {
         rootUrl : './scenes/',
-        file : 'myGame.babylon',
-
+        file : 'myGame.babylon'
       }
     },
       lives: 3,
@@ -47,6 +46,43 @@ A3D.config = {
           y: 0,
           z: 0
         }
+      },
+      playerSettings: {
+        meshName: 'Snail',
+        rootUrl: '/models/',
+        file:'snail.babylon',
+        spawnPoint : 'Initial.Spawn',
+
+        animationsSetup : [
+          {
+            name : 'move',
+            start : 1,
+            end : 20,
+            options : {
+              ratio: 2.4
+            }
+          },
+          {
+            name : 'hit',
+            start:65,
+            end : 70,
+            options : {
+              loop : true,
+              ratio : .2
+            }
+          },
+        ],
+        scale : {
+          x: 1,
+          y: 1,
+          z : 1
+        },
+        boundsOffset : {
+          z : 0,
+          x : 0,
+          y: 0
+        }
+
       }
   };
 
