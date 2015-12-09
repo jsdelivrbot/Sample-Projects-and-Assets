@@ -18,17 +18,17 @@ A3D.config = {
               {gotoPoint:{x:-7,y:0,z:3},wait:2000,lookTo:true,speed:0.01}
             ]
           };
-        console.log('this is nice');
         for(var e in A3D.ActiveGame.mainScene.Enemy){
           var me = A3D.ActiveGame.mainScene.Enemy[e];
           me.makePatrol(pat);
           me.startPatrol();
         }
+        A3D.ActiveGame.runOnAssetsLoaded();
       }
     }
   },
     playerSetup : {
-      urlRoot : './models/',
+      rootUrl : './models/',
       file : 'chris.babylon',
       importMeshName:'Chris',
       boundsSize : {
@@ -81,7 +81,20 @@ A3D.config = {
         }
       ]
     },
-
+    screenImages : [
+      {
+        src:'/images/start.png',
+        id : 'mainScreen'
+      },
+      {
+        src : '/images/lose.png',
+        id : 'loseScreen'
+      },
+      {
+        src : '/images/win.png',
+        id : 'winScreen'
+      }
+    ],
     targetSetup : {
       rootUrl : './models/',
       file : 'gototarget1.babylon',
@@ -98,7 +111,7 @@ A3D.config = {
         z:0.3
       }
     },
-
+    actionButton: 'leftmouse',
     cameraSetup : {
       offset: {
         x:0,
