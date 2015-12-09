@@ -7,14 +7,7 @@ A3D.config = {
   scenes : {
     first_level : {
       rootUrl : './scenes/',
-      file : 'platformer.babylon',
-      onload: function(){
-        console.log('The onload function has run');
-        A3D.endTriggerFunction = function(){
-          A3D.ActiveGame.pause();
-          console.log('I have paused the game for you');
-        }
-      }
+      file : 'platformer.babylon'
     }
   },
 
@@ -87,6 +80,21 @@ A3D.config = {
         }
 
       },
+      endTrigger : 'Trigger.End',
+      screenImages : [
+        {
+          src:'/images/start.png',
+          id : 'mainScreen'
+        },
+        {
+          src : '/images/lose.png',
+          id : 'loseScreen'
+        },
+        {
+          src : '/images/win.png',
+          id : 'winScreen'
+        }
+      ],
       livesImage : {
         src : '/images/heart.png',
         dX:0,
